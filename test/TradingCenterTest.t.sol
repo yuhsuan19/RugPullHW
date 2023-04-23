@@ -5,8 +5,7 @@ import "forge-std/Test.sol";
 import "solmate/tokens/ERC20.sol";
 import { TradingCenter, IERC20 } from "../src/TradingCenter.sol";
 import { TradingCenterV2 } from "../src/TradingCenterV2.sol";
-import "../src/UpgradeableProxy.sol";
-import "forge-std/console.sol";
+import { UpgradeableProxy } from "../src/UpgradeableProxy.sol";
 
 contract FiatToken is ERC20 {
   constructor(string memory name, string memory symbol, uint8 decimals) ERC20(name, symbol, decimals){}
