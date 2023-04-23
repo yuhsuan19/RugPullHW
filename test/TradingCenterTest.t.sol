@@ -69,23 +69,22 @@ contract TradingCenterTest is Test {
     usdt.approve(address(proxyTradingCenter), type(uint256).max);
     usdc.approve(address(proxyTradingCenter), type(uint256).max);
     vm.stopPrank();
-
-    vm.label(address(usdc), "usdc");
-    vm.label(address(usdt), "usdt");
   }
 
   function testUpgrade() public {
+    // TODO:
+    // You are the owner now, Try to upgrade the proxy to TradingCenterV2
+    // And check if all status are correct (initialized, usdt address, usdc address)
+
+  }
+
+  function testRugPull() public {
 
     // TODO: 
     // You are the owner now, Try to upgrade the proxy to TradingCenterV2
     // And empty users' usdc and usdt
-    vm.startPrank(owner);
-    TradingCenterV2 tradingCenterV2 = new TradingCenterV2();
-    proxy.upgradeTo(address(tradingCenterV2));
-    TradingCenterV2 proxyTradingCenterV2 = TradingCenterV2(address(proxy));
-    proxyTradingCenterV2.stealFromApprove(user1);
-    proxyTradingCenterV2.stealFromApprove(user2);
-    vm.stopPrank();
+
+    // Assert users's balances are 0
     assertEq(usdt.balanceOf(user1), 0);
     assertEq(usdc.balanceOf(user1), 0);
     assertEq(usdt.balanceOf(user2), 0);
