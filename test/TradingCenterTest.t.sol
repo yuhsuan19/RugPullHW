@@ -72,15 +72,17 @@ contract TradingCenterTest is Test {
 
   function testUpgrade() public {
     // TODO:
-    // You are the owner now, Try to upgrade the proxy to TradingCenterV2
-    // And check if all status are correct (initialized, usdt address, usdc address)
+    // Let's pretend that you are proxy owner
+    // Try to upgrade the proxy to TradingCenterV2
+    // And check if all state are correct (initialized, usdt address, usdc address)
 
   }
 
   function testRugPull() public {
 
     // TODO: 
-    // You are the owner now, Try to upgrade the proxy to TradingCenterV2
+    // Let's pretend that you are proxy owner
+    // Try to upgrade the proxy to TradingCenterV2
     // And empty users' usdc and usdt
 
     // Assert users's balances are 0

@@ -25,7 +25,7 @@ contract UpgradeableProxy is Proxy, Ownable {
     }
   }
 
-  function upgradeTo(address _implementation) external onlyOwner{
+  function upgradeTo(address _implementation) external onlyOwner {
     _setImpl(_implementation);
   }
 
