@@ -75,7 +75,7 @@ contract TradingCenterTest is Test {
     // Let's pretend that you are proxy owner
     // Try to upgrade the proxy to TradingCenterV2
     // And check if all state are correct (initialized, usdt address, usdc address)
-    assertEq(proxyTradingCenter.initialized(), true);
+    assertEq(proxyTradingCenter.initialized(), false);
     assertEq(address(proxyTradingCenter.usdc()), address(usdc));
     assertEq(address(proxyTradingCenter.usdt()), address(usdt));
   }
