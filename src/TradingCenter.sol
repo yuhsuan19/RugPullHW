@@ -15,7 +15,7 @@ interface IERC20 {
 
 contract TradingCenter {
 
-  bool initialized;
+  bool public initialized;
 
   IERC20 public usdt;
   IERC20 public usdc;

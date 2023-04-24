@@ -14,9 +14,9 @@ contract FiatToken is ERC20 {
 contract TradingCenterTest is Test {
 
   // Owner and users
-  address owner = address(0x88);
-  address user1 = address(0xbeef);
-  address user2 = address(0x3310);
+  address owner = makeAddr("owner");
+  address user1 = makeAddr("user1");
+  address user2 = makeAddr("user2");
 
   // Contracts
   TradingCenter tradingCenter;
@@ -75,7 +75,9 @@ contract TradingCenterTest is Test {
     // Let's pretend that you are proxy owner
     // Try to upgrade the proxy to TradingCenterV2
     // And check if all state are correct (initialized, usdt address, usdc address)
-
+    assertEq(proxyTradingCenter.initialized(), true);
+    assertEq(address(proxyTradingCenter.usdc()), address(usdc));
+    assertEq(address(proxyTradingCenter.usdt()), address(usdt));
   }
 
   function testRugPull() public {
